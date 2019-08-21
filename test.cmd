@@ -1,1 +1,2 @@
 ECHO is on.
+ECHO HELP HELP!
