@@ -2,4 +2,3 @@ ECHO is on.
 "this is a change!"
 "test"
 "TET"
-h
