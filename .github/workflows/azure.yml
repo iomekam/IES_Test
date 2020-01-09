@@ -18,8 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: lafernando/github-action-bash@v1.0
     - name: git-bash
+      uses: fnkr/github-action-git-bash@v1.1
+    - name: Download and run release script
       run: | 
         curl https://raw.githubusercontent.com/Microsoft/bedrock/master/gitops/azure-devops/build.sh > build.sh
         chmod +x ./build.sh
@@ -27,9 +28,6 @@ jobs:
         chmod +x ./release.sh
         bash release.sh
       env:
-        AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
-        AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-        NODE_VERSION: '10.x'                # set this to the node version to use
         FAB_ENV_NAME: DEV
         SUBCOMPONENT: apis.githubmigrator-git-clone-service
         ACCESS_TOKEN_SECRET: 4b21dff9522db2f5eb9731e18de0a6f587cfddd9
