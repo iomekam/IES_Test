@@ -12,22 +12,12 @@ on:
   push:
     branches:
       - master
-        
-env:
-  FAB_ENV_NAME: DEV
-  SUBCOMPONENT: apis.githubmigrator-git-clone-service
-  ACCESS_TOKEN_SECRET: 4b21dff9522db2f5eb9731e18de0a6f587cfddd9
-  COMMIT_MESSAGE: Update image to blah
-  REPO: https://github.com/microsoft-1es/github-integration-hld
-  YAML_PATH: image.tag
-  YAML_PATH_VALUE: blah
-  
+      
 jobs:
   deploy:
     name: Update HLD Repository
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
     - name: git-bash
       uses: fnkr/github-action-git-bash@v1.1
     - name: Download and run release script
@@ -37,4 +27,11 @@ jobs:
         curl https://raw.githubusercontent.com/Microsoft/bedrock/master/gitops/azure-devops/release.sh > release.sh
         chmod +x ./release.sh
         bash release.sh
-    
+      env:
+        FAB_ENV_NAME: DEV
+        SUBCOMPONENT: apis.githubmigrator-git-clone-service
+        ACCESS_TOKEN_SECRET: 2442a3df5f94c24c0afa0fa8bfab7d61794c439b
+        COMMIT_MESSAGE: Update image to blah
+        REPO: https://github.com/microsoft-1es/github-integration-hld
+        YAML_PATH: image.tag
+        YAML_PATH_VALUE: blah
