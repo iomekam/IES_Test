@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: jcblw/bash@1.0.0
+    - uses: lafernando/github-action-bash@v1.0
     - name: git-bash
       run: | 
         bash
