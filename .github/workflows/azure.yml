@@ -12,19 +12,6 @@ on:
   push:
     branches:
       - master
-
-env:
-  AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '10.x'                # set this to the node version to use
-  FAB_ENV_NAME: DEV
-  SUBCOMPONENT: apis.githubmigrator-git-clone-service
-  ACCESS_TOKEN_SECRET: 4b21dff9522db2f5eb9731e18de0a6f587cfddd9
-  COMMIT_MESSAGE: Update image to blah
-  REPO: https://github.com/microsoft-1es/github-integration-hld
-  YAML_PATH: image.tag
-  YAML_PATH_VALUE: blah
-
 jobs:
   deploy:
     name: Update HLD Repository
@@ -38,3 +25,15 @@ jobs:
         curl https://raw.githubusercontent.com/Microsoft/bedrock/master/gitops/azure-devops/release.sh > release.sh
         chmod +x ./release.sh
         . release.sh
+      continue-on-error: true
+      env:
+        AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
+        AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+        NODE_VERSION: '10.x'                # set this to the node version to use
+        FAB_ENV_NAME: DEV
+        SUBCOMPONENT: apis.githubmigrator-git-clone-service
+        ACCESS_TOKEN_SECRET: 4b21dff9522db2f5eb9731e18de0a6f587cfddd9
+        COMMIT_MESSAGE: Update image to blah
+        REPO: https://github.com/microsoft-1es/github-integration-hld
+        YAML_PATH: image.tag
+        YAML_PATH_VALUE: blah
