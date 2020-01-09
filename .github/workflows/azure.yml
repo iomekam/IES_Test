@@ -18,8 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - uses: jcblw/bash@1.0.0
     - name: git-bash
       run: | 
+        bash
         curl https://raw.githubusercontent.com/Microsoft/bedrock/master/gitops/azure-devops/build.sh > build.sh
         chmod +x ./build.sh
         curl https://raw.githubusercontent.com/Microsoft/bedrock/master/gitops/azure-devops/release.sh > release.sh
@@ -37,3 +39,4 @@ jobs:
         REPO: https://github.com/microsoft-1es/github-integration-hld
         YAML_PATH: image.tag
         YAML_PATH_VALUE: blah
+      
