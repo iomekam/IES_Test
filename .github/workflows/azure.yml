@@ -30,7 +30,7 @@ jobs:
       env:
         FAB_ENV_NAME: DEV
         SUBCOMPONENT: apis.githubmigrator-git-clone-service
-        ACCESS_TOKEN_SECRET: 2442a3df5f94c24c0afa0fa8bfab7d61794c439b
+        ACCESS_TOKEN_SECRET: 1806d39797319e051d77d27333fbc27a2034817b
         COMMIT_MESSAGE: Update image to blah
         REPO: https://github.com/microsoft-1es/github-integration-hld
         YAML_PATH: image.tag
