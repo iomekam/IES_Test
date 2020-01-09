@@ -19,7 +19,7 @@ env:
   NODE_VERSION: '10.x'                # set this to the node version to use
   FAB_ENV_NAME: DEV
   SUBCOMPONENT: apis.githubmigrator-git-clone-service
-  ACCESS_TOKEN_SECRET: test
+  ACCESS_TOKEN_SECRET: 4b21dff9522db2f5eb9731e18de0a6f587cfddd9
   COMMIT_MESSAGE: Update image to blah
   REPO: https://github.com/microsoft-1es/github-integration-hld
   YAML_PATH: image.tag
