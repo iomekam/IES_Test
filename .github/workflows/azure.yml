@@ -34,4 +34,4 @@ jobs:
         COMMIT_MESSAGE: Update image to blah
         REPO: https://github.com/microsoft-1es/github-integration-hld
         YAML_PATH: image.tag
-        YAML_PATH_VALUE: blah
+        YAML_PATH_VALUE: test
