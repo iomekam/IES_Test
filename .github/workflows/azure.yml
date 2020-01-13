@@ -12,7 +12,6 @@ on:
   push:
     branches:
       - master
-      
 jobs:
   deploy:
     name: Update HLD Repository
@@ -31,7 +30,7 @@ jobs:
         FAB_ENV_NAME: DEV
         SUBCOMPONENT: apis.githubmigrator-git-clone-service
         ACCESS_TOKEN_SECRET: 1806d39797319e051d77d27333fbc27a2034817b
-        COMMIT_MESSAGE: Update image to blah
+        COMMIT_MESSAGE: Update image to ${{ github.sha }}
         REPO: https://github.com/microsoft-1es/github-integration-hld
         YAML_PATH: image.tag
-        YAML_PATH_VALUE: test
+        YAML_PATH_VALUE: ${{ github.sha }}
