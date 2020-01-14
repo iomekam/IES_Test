@@ -35,5 +35,5 @@ jobs:
         YAML_PATH: image.tag
         YAML_PATH_VALUE: ${{ github.sha }}
     - name: Test
-      if: success()
+      if: failure()
       run: echo "test"
