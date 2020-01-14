@@ -25,7 +25,7 @@ jobs:
         chmod +x ./build.sh
         curl https://raw.githubusercontent.com/Microsoft/bedrock/master/gitops/azure-devops/release.sh > release.sh
         chmod +x ./release.sh
-        bash release.sh
+        bash release.shx
       env:
         FAB_ENV_NAME: DEV
         SUBCOMPONENT: apis.githubmigrator-git-clone-service
@@ -34,3 +34,5 @@ jobs:
         REPO: https://github.com/microsoft-1es/github-integration-hld
         YAML_PATH: image.tag
         YAML_PATH_VALUE: ${{ github.sha }}
+    - name: Test
+      run: echo "test"
